@@ -1,7 +1,7 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { Booking } from 'src/booking/entities/booking.entity';
 
-enum RoomStatus {
+export enum RoomStatus {
   BOOKED = 'booked',
   AVAILABLE = 'available',
 }
