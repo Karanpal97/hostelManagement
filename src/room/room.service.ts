@@ -20,7 +20,7 @@ export class RoomService {
   async findAll(): Promise<apiResponse> {
     try {
       const rooms = await this.roomRepo.find({
-        where: { status: RoomStatus.AVAILABLE },
+    
       });
       return {
         message: 'successfully get all the rooms',

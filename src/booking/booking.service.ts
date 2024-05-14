@@ -7,6 +7,11 @@ import { Repository } from 'typeorm';
 import { RoomService } from 'src/room/room.service';
 import { EntityManager } from 'typeorm';
 import { Room, RoomStatus } from 'src/room/entities/room.entity';
+import { Student } from '../student/entities/student.entity';
+import { getRepository } from 'typeorm';
+
+import { FindOneOptions } from 'typeorm';
+
 @Injectable()
 export class BookingService {
   constructor(
@@ -46,16 +51,28 @@ export class BookingService {
   async findAll() {
     try {
       return await this.bookingRepo.find({
-        relations: ['studentId', 'roomId'],
+        relations: ['studentid', 'roomid'],
       });
     } catch (error) {
       console.log(error);
       throw new Error('Failed to fetch bookings');
     }
   }
-  findOne(id: number) {
-    return `This action returns a #${id} booking`;
-  }
+//   async findOne(id: number) {
+//     return await this.bookingRepo.findOne({
+//         where: { studentid: { student_id: id } }
+//     });
+// }
+
+async findOne(id: number): Promise<Booking | undefined> {
+  return await this.bookingRepo.findOne({
+      where: { id },
+      relations: ['roomid', 'studentid']
+  });
+}
+
+
+
 
   update(id: number, updateBookingDto: UpdateBookingDto) {
     return `This action updates a #${id} booking`;
