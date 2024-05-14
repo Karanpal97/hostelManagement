@@ -9,9 +9,9 @@ export class Booking {
 
   @ManyToOne(() => Room, (room) => room.bookings)
   @JoinColumn({ name: 'room_id' })
-  roomId: Room;
+  roomid: Room;
 
   @ManyToOne(() => Student, (student) => student.bookings)
   @JoinColumn({ name: 'student_id' })
-  studentId: Student;
+  studentid: Student;
 }
