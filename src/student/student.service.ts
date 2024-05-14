@@ -26,7 +26,9 @@ export class StudentService {
   update(id: number, updateStudentDto: UpdateStudentDto) {
     return `This action updates a #${id} student`;
   }
-
+  findByEmail(email:string){
+    return this.studentRepo.findOne({where:{email}})
+  }
   remove(id: number) {
     return `This action removes a #${id} student`;
   }
