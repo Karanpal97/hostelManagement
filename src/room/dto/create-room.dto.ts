@@ -3,7 +3,7 @@ import { IsNotEmpty, IsString, IsNumber } from 'class-validator';
 export class CreateRoomDto {
   @IsNotEmpty()
   @IsNumber()
-  roomNo;
+  roomno;
   @IsNotEmpty()
   @IsString()
   status;

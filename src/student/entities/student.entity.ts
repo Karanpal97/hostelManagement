@@ -10,7 +10,7 @@ export class Student {
   @Column()
   email: string;
   @Column()
-  phoneNumber: string;
-  @OneToMany(() => Booking, (booking) => booking.studentId)
+  phonenumber: string;
+  @OneToMany(() => Booking, (booking) => booking.studentid)
   bookings: Booking[];
 }

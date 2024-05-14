@@ -11,12 +11,12 @@ export class Room {
   @PrimaryGeneratedColumn()
   room_id: number;
   @Column()
-  roomNo: number;
+  roomno: number;
   @Column()
   capacity: number;
   @Column({ type: 'enum', enum: RoomStatus, default: RoomStatus.AVAILABLE })
   status: RoomStatus;
 
-  @OneToMany(() => Booking, (booking) => booking.roomId)
+  @OneToMany(() => Booking, (booking) => booking.roomid)
   bookings: Booking[];
 }

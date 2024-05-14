@@ -16,7 +16,7 @@ export class BookingService {
     private readonly entityManager: EntityManager,
   ) {}
   async create(createBookingDto: CreateBookingDto) {
-    const room = await this.roomService.findOne(createBookingDto.roomId);
+    const room = await this.roomService.findOne(createBookingDto.roomid);
 
     const capacity = room.capacity;
 

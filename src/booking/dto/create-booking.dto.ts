@@ -3,8 +3,8 @@ import { IsEmpty, IsNumber } from 'class-validator';
 export class CreateBookingDto {
   @IsEmpty()
   @IsNumber()
-  roomId;
+  roomid;
   @IsEmpty()
   @IsNumber()
-  studentId;
+  studentid;
 }

@@ -14,11 +14,12 @@ import { Booking } from './booking/entities/booking.entity';
     
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host:"ep-white-bonus-a4leb1hc-pooler.us-east-1.aws.neon.tech",
+       url: 'postgres://default:V2mhj3grBuTO@ep-white-bonus-a4leb1hc-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require',
       port: 5432,
-      username: 'postgres',
-      password: 'kiran@97',
-      database: 'Hostel',
+      username: 'default',
+      password: 'V2mhj3grBuTO',
+      database: 'verceldb',
       entities: [Room, Student, Booking],
       synchronize: false
     }),

@@ -8,5 +8,5 @@ export class CreateStudentDto {
   @IsNotEmpty()
   email;
   @IsNotEmpty()
-  phoneNumber;
+  phonenumber;
 }
