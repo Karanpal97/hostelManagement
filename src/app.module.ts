@@ -11,15 +11,16 @@ import { Booking } from './booking/entities/booking.entity';
 
 @Module({
   imports: [
+    
     TypeOrmModule.forRoot({
       type: 'postgres',
-      database: 'hostel',
-      port: 5432,
       host: 'localhost',
+      port: 5432,
       username: 'postgres',
-      password: 'postgres',
+      password: 'kiran@97',
+      database: 'Hostel',
       entities: [Room, Student, Booking],
-      synchronize: true,
+      synchronize: false
     }),
     RoomModule,
     StudentModule,
